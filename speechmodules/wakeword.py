@@ -1,8 +1,11 @@
 import pvporcupine
 import pyaudio
 import struct
-PICOVOICE_API_KEY = ""  # 你的picovoice key
-keyword_path = './Hey-Murphy_en_mac_v2_1_0.ppn'  # 你的唤醒词检测离线文件地址
+
+# 你的picovoice key
+PICOVOICE_API_KEY = "Bs/aptFK7e241US5FYx1wb2WGIjEVAQdUN7VA05zWb7lK31hgXnXtg=="
+# 你的唤醒词检测离线文件地址
+keyword_path = '/home/fafa/Documents/learn_new/Orator/speechmodules/Hey-Moss_en_linux_v2_2_0.ppn'
 
 
 class PicoWakeWord:
@@ -15,7 +18,6 @@ class PicoWakeWord:
         )
         self.myaudio = pyaudio.PyAudio()
         self.stream = self.myaudio.open(
-            input_device_index=0,
             rate=self.porcupine.sample_rate,
             channels=1,
             format=pyaudio.paInt16,
