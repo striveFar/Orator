@@ -1,7 +1,7 @@
 from aip import AipSpeech
 import speech_recognition as sr
 # pip install azure-cognitiveservices-speech
-import azure.cognitiveservices.speech as speechsdk
+# import azure.cognitiveservices.speech as speechsdk
 
 
 class BaiduASR:
@@ -83,13 +83,13 @@ class AzureASR:
 
 
 if __name__ == '__main__':
-    APP_ID = ''
-    API_KEY = ''
-    SECRET_KEY = ''
+    APP_ID = '32952021'
+    API_KEY = '3LneHxhA26gmWXOVikZuzqZ6'
+    SECRET_KEY = 'uShbfThbYITNlWam2ovH4KD9NsVQMI1R'
     baiduasr = BaiduASR(APP_ID, API_KEY, SECRET_KEY)
     result = baiduasr.speech_to_text()
     print(result)
-    AZURE_API_KEY = ""
-    AZURE_REGION = ""
-    azureasr = AzureASR(AZURE_API_KEY, AZURE_REGION)
-    azureasr.speech_to_text()
+    # AZURE_API_KEY = ""
+    # AZURE_REGION = ""
+    # azureasr = AzureASR(AZURE_API_KEY, AZURE_REGION)
+    # azureasr.speech_to_text()
