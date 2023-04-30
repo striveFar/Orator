@@ -4,11 +4,11 @@ from speechmodules.text2speech import BaiduTTS, Pyttsx3TTS, AzureTTS
 from chatmodules.openai_chat_module import OpenaiChatModule
 import struct
 
-PICOVOICE_API_KEY = ""  # 你的picovoice key
-keyword_path = './speechmodules/Hey-Murphy_en_mac_v2_1_0.ppn'  # 你的唤醒词检测离线文件地址
-Baidu_APP_ID = ''  # 你的百度APP_ID
-Baidu_API_KEY = ''  # 你的百度API_KEY
-Baidu_SECRET_KEY = ''  # 你的百度SECRET_KEY
+PICOVOICE_API_KEY = "Bs/aptFK7e241US5FYx1wb2WGIjEVAQdUN7VA05zWb7lK31hgXnXtg=="  # 你的picovoice key
+keyword_path = './speechmodules/Hey-Moss_en_linux_v2_2_0.ppn'  # 你的唤醒词检测离线文件地址
+Baidu_APP_ID = '32952021'  # 你的百度APP_ID
+Baidu_API_KEY = '3LneHxhA26gmWXOVikZuzqZ6'  # 你的百度API_KEY
+Baidu_SECRET_KEY = 'uShbfThbYITNlWam2ovH4KD9NsVQMI1R'  # 你的百度SECRET_KEY
 openai_api_key = ""
 
 AZURE_API_KEY = ""
@@ -37,8 +37,10 @@ def run(picowakeword, asr, tts, openai_chat_module):
 
 def Orator():
     picowakeword = PicoWakeWord(PICOVOICE_API_KEY, keyword_path)
-    asr = AzureASR(AZURE_API_KEY, AZURE_REGION)
-    tts = AzureTTS(AZURE_API_KEY, AZURE_REGION)
+    # asr = AzureASR(AZURE_API_KEY, AZURE_REGION)
+    # tts = AzureTTS(AZURE_API_KEY, AZURE_REGION)
+    asr = BaiduASR(Baidu_APP_ID, Baidu_API_KEY, Baidu_SECRET_KEY)
+    tts = BaiduTTS(Baidu_APP_ID, Baidu_API_KEY, Baidu_SECRET_KEY)
     openai_chat_module = OpenaiChatModule(openai_api_key)
     try:
         run(picowakeword, asr, tts, openai_chat_module)
