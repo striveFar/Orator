@@ -2,7 +2,7 @@ from aip import AipSpeech
 from playsound import playsound
 import pyttsx3
 # pip install azure-cognitiveservices-speech
-import azure.cognitiveservices.speech as speechsdk
+# import azure.cognitiveservices.speech as speechsdk
 
 
 class BaiduTTS:
@@ -65,21 +65,19 @@ class AzureTTS:
 
 
 if __name__ == '__main__':
-    APP_ID = ''
-    API_KEY = ''
-    SECRET_KEY = ''
+    APP_ID = '32952021'
+    API_KEY = '3LneHxhA26gmWXOVikZuzqZ6'
+    SECRET_KEY = 'uShbfThbYITNlWam2ovH4KD9NsVQMI1R'
     baidutts = BaiduTTS(APP_ID, API_KEY, SECRET_KEY)
     baidutts.text_to_speech_and_play('春天来了，每天的天气都很好！')
 
     pyttsx3tts = Pyttsx3TTS()
-    pyttsx3tts.text_to_speech_and_play('春天来了，每天的天气都很好！')
+    pyttsx3tts.text_to_speech_and_play('hello world!')
 
-    AZURE_API_KEY = ""
-    AZURE_REGION = ""
-    azuretts = AzureTTS(AZURE_API_KEY, AZURE_REGION)
-    azuretts.text_to_speech_and_play("嗯，你好，我是你的智能小伙伴，我的名字叫Murphy，你可以和我畅所欲言，我是很会聊天的哦！")
-
-
+    # AZURE_API_KEY = ""
+    # AZURE_REGION = ""
+    # azuretts = AzureTTS(AZURE_API_KEY, AZURE_REGION)
+    # azuretts.text_to_speech_and_play("嗯，你好，我是你的智能小伙伴，我的名字叫Murphy，你可以和我畅所欲言，我是很会聊天的哦！")
 
 
 
@@ -97,3 +95,6 @@ if __name__ == '__main__':
 
 
 
+
+
+    
